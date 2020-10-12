@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "SvCorreoRol";
+            // 
+            // SvCorreoRol
+            // 
+            this.ServiceName = "FixedEnvioCorreosRRHH";
+
         }
 
         #endregion

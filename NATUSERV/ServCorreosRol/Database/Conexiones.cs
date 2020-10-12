@@ -170,7 +170,7 @@ namespace ServCorreosRol.Database
                 string querySelect =
             "select cro_numero,cro_empre,a.ID,FechaInicio,FechaFin,TotalEmpleados,TotalProcesados from mail_rolesprocesados a inner join "
             + "tb_cabrol as b on a.ID = b.ID "
-            + "where totalEmpleados != TotalProcesados and datediff(hour, FechaInicio, getdate()) > 24";
+            + "where totalEmpleados != TotalProcesados and datediff(hour, FechaInicio, getdate()) > 4";
 
 
                 using (SqlConnection connection = new SqlConnection(builder.ToString()))
@@ -480,6 +480,9 @@ namespace ServCorreosRol.Database
                             pre_refere = Convert.ToString(readerProcedureIng[7]),
                             Signo = "+"
                         };
+                        if (!string.IsNullOrEmpty(det.pre_refere))
+                            det.rub_descri = det.pre_refere;
+
                         Lista.Add(det);
                     }
 
